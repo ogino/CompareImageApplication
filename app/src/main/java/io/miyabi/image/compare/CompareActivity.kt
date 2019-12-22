@@ -16,6 +16,8 @@ class CompareActivity : AppCompatActivity() {
 //            .putAfter(ResourcesCompat.getDrawable(resources, R.drawable.after, null))
 //        layout.putBefore("https://cdn.hasselblad.com/samples/x1d-II-50c/x1d-II-sample-01.jpg")
 //            .putAfter("https://cdn.hasselblad.com/samples/x1d-II-50c/x1d-II-sample-02.jpg")
+//        layout.putBefore("https://www.publicdomainpictures.net/pictures/10000/velka/947-1262213425CFHP.jpg")
+//            .putAfter("https://www.publicdomainpictures.net/pictures/80000/velka/sunset-from-sandpatch.jpg")
     }
 
 

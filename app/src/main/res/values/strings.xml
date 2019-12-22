@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">画像比較アプリケーションn</string>
+    <string name="app_name">画像比較アプリケーション</string>
     <string name="button">比較画像を表示</string>
     <string name="before_image">変更前の画像</string>
     <string name="after_image">変更後の画像</string>

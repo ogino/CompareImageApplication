@@ -4,23 +4,20 @@ import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
-import com.nostra13.universalimageloader.core.ImageLoader
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration
+import com.squareup.picasso.Picasso
 import org.apache.commons.lang3.exception.ExceptionUtils
 import java.util.logging.Logger
 
-fun ImageView.loadImage(imgUrl: String?) {
-    val imageLoader = ImageLoader.getInstance()
-    imageLoader.init(ImageLoaderConfiguration.createDefault(this.context))
-    imageLoader.displayImage(imgUrl, this)
+fun ImageView.loadImage(url: String?) {
+    Picasso.get().load(url).into(this)
 }
 
-fun ImageView.loadImage(imgDrawable: Drawable?) {
-    this.setImageDrawable(imgDrawable)
+fun ImageView.loadImage(drawable: Drawable?) {
+    this.setImageDrawable(drawable)
 }
 
-fun View.stayVisibleOrGone(stay: Boolean) {
-    this.visibility = if (stay) View.VISIBLE else View.GONE
+fun View.visible(visible: Boolean) {
+    this.visibility = if (visible) View.VISIBLE else View.GONE
 }
 
 fun Bitmap.scaledBitmap() : Bitmap? {

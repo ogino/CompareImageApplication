@@ -11,12 +11,13 @@ import android.widget.SeekBar
 import android.widget.TextView
 import io.miyabi.image.compare.R
 import io.miyabi.image.compare.extension.loadImage
-import io.miyabi.image.compare.extension.stayVisibleOrGone
+import io.miyabi.image.compare.extension.visible
 import io.miyabi.image.compare.task.ClipDrawableTask
 import org.apache.commons.lang3.exception.ExceptionUtils
 import java.util.logging.Logger
 
-class CompareLayout : RelativeLayout, ClipDrawableTask.AfterImage {
+class CompareLayout : RelativeLayout,
+    AfterImageLayout {
 
     private val logger = Logger.getLogger(javaClass.canonicalName.orEmpty())
     private var beforeImageView : ImageView
@@ -51,7 +52,7 @@ class CompareLayout : RelativeLayout, ClipDrawableTask.AfterImage {
     }
 
     override fun onLoaded(success: Boolean) {
-        seekBar.stayVisibleOrGone(success)
+        seekBar.visible(success)
     }
 
     private val afterHide = 1000
