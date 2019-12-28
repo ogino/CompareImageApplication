@@ -62,12 +62,14 @@ class ClipDrawableTask<T>(
 
     override fun onPostExecute(clipDrawable: ClipDrawable?) {
         imageRef.get()?.let { image ->
-            clipDrawable?.let {
-                initSeekBar(it)
-                image.setImageDrawable(it)
-                when (it.level) {
-                    0 -> it.level = seekBarRef.get()!!.progress
-                    else -> it.level = progressNum
+            clipDrawable?.let { drawable ->
+                initSeekBar(drawable)
+                image.setImageDrawable(drawable)
+                seekBarRef.get()?.let {
+                    when (drawable.level) {
+                        0 -> drawable.level = it.progress
+                        else -> drawable.level = progressNum
+                    }
                 }
                 listener?.onLoaded(true)
                 return
